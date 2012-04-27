@@ -25,6 +25,7 @@ function basic_cmis_admin() {
 				</th>
 				<td>
 					<input type="text" class="regular-text" name="cmis_repository_url" id="cmis_repository_url" value="<?php echo get_option('cmis_repository_url') ?>">
+                    <span class="description">e.g. http://www.example.com/alfresco/service/api/cmis</span>
 				</td>
 			</tr>
 			<tr valign="top">
@@ -40,7 +41,7 @@ function basic_cmis_admin() {
 					<label for="cmis_password">Password</label>
 				</th>
 				<td>
-					<input type="text" name="cmis_password" id="cmis_password" value="<?php echo get_option('cmis_password') ?>">
+					<input type="password" name="cmis_password" id="cmis_password" value="<?php echo get_option('cmis_password') ?>">
 				</td>
 			</tr>
 		</table>
