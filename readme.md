@@ -1,13 +1,21 @@
 # Basic CMIS for Wordpress
 
 **Contributors**:       [ansonhoyt](https://twitter.com/ansonhoyt @ansonhoyt)
+
 **Tags**:               cmis, alfresco
+
 **Requires at least**:  3.3.1 (let us know if it works on an earlier version)
+
 **Tested up to**:       3.3.2
+
 **Plugin URI**:         https://github.com/ansonhoyt/Basic-CMIS
+
 **Version**:            0.0.2
+
 **Author**:             Anson Hoyt
+
 **Author URI**:         https://github.com/ansonhoyt
+
 **License**:            LGPLv3
 
 ## Description
@@ -25,7 +33,7 @@ Wordpress Plugin for basic CMIS integration. Searches a CMIS compliant system an
 
 ## Usage
 
-Shortcode:
+Use the `[cmis]` shortcode to retrieve documents and render them.
 * Docs in a folder: `[cmis folder="/my particular/folder name/"]`
 * Docs in the folder, including subfolders: `[cmis tree="/my particular/folder name/"]`
 * Docs containing the keywords: `[cmis keywords="coffee tea"]`
@@ -38,14 +46,14 @@ Shortcode:
 * Display options:
   `[cmis display_options="show_icon show_modified_date hide_title"`
 * Render a suitable title:
-  > * `[cmis folder="/My Documents"]` => "Documents in /My Documents"
-  > * `[cmis tree="/My Documents"]` => "Documents in /My Documents"
-  > * `[cmis keywords="coffee"]` => "Documents containing 'coffee'"
-  > * `[cmis name="%Agenda%"]` => "Documents named '%Agenda%'"
+  * `[cmis folder="/My Documents"]` => "Documents in /My Documents"
+  * `[cmis tree="/My Documents"]` => "Documents in /My Documents"
+  * `[cmis keywords="coffee"]` => "Documents containing 'coffee'"
+  * `[cmis name="%Agenda%"]` => "Documents named '%Agenda%'"
 
 ## Contribute
 
-If you have found a bug or have a feature to request, please add it to the [GitHub issue tracker](https://github.com/ansonhoyt/Basic-CMIS/issues) or fork the project and send a pull request.
+If you have found a bug or have a feature to request, please add it to the [GitHub issue tracker](https://github.com/ansonhoyt/Basic-CMIS/issues), or fork the project and send a pull request.
 
 ## License
 
