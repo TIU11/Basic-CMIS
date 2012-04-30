@@ -45,6 +45,7 @@ function do_cmis($folder, $tree, $keywords, $name) {
     $repo_password = get_option('cmis_password');
     $client = new CMISService($repo_url, $repo_username, $repo_password);
     $query_conditions = array();
+    $error_message = 'Error. Unable to show documents.';
 
     try {
         if ($folder) {
@@ -71,10 +72,13 @@ function do_cmis($folder, $tree, $keywords, $name) {
             return display_cmis_objects($objs);
         }
     }
-    catch (CmisRuntimeException $e) {
-        echo '<div class="alert">', 'Caught exception: ', $e, '</div>';
+    catch (CmisObjectNotFoundException $e) {
+        $error_message = "No documents found.";
     }
-    return '<div class="alert">Unable to show documents.</div>';
+    catch (CmisRuntimeException $e) {
+        $error_message = "Error. Unexpected problem when retrieving documents.";
+    }
+    return "<div class=\"alert\">$error_message</div>";
 }
 
 function display_cmis_objects($objs) {
