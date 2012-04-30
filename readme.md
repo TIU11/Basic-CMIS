@@ -38,11 +38,10 @@ Use the `[cmis]` shortcode to retrieve documents and render them.
 * Docs in the folder, including subfolders: `[cmis tree="/my particular/folder name/"]`
 * Docs containing the keywords: `[cmis keywords="coffee tea"]`
 * Docs whose name matches. May include wildcard character '%': `[cmis name="Agenda%.doc"]`
+* Combinations of parameters: `[cmis folder="/documents" keywords="bacon" name="%menu%.pdf"]`
 
-## TODO
+## Todo
 
-* Combining shortcode parameters:
-  `[cmis folder="/my particular/folder name/" keywords="coffee" name="%.doc"]` 
 * Display options:
   `[cmis display_options="show_icon show_modified_date hide_title"`
 * Render a suitable title:

@@ -37,8 +37,6 @@ add_shortcode('cmis', 'cmis_shortcode');
 
 /*
 Perform specified retrieve and return rendered table of documents.
-
-Usage:
 */
 function do_cmis($folder, $tree, $keywords, $name) {
     // Initialize CMIS Client
@@ -46,26 +44,29 @@ function do_cmis($folder, $tree, $keywords, $name) {
     $repo_username = get_option('cmis_username');
     $repo_password = get_option('cmis_password');
     $client = new CMISService($repo_url, $repo_username, $repo_password);
+    $query_conditions = array();
 
     try {
         if ($folder) {
             $f = $client->getObjectByPath($folder);
-            $objs = $client->getChildren($f->id);
-            return display_cmis_objects($objs);
+            array_push($query_conditions, "IN_FOLDER('$f->id')");
         }
         elseif ($tree) {
             $f = $client->getObjectByPath($tree);
-            $query = "SELECT * FROM cmis:document WHERE IN_TREE('$f->id')";
-            $objs = $client->query($query);
-            return display_cmis_objects($objs);
+            array_push($query_conditions, "IN_TREE('$f->id')");
         }
-        elseif ($keywords) {
-            $query = "SELECT * FROM cmis:document WHERE CONTAINS('$keywords')";
-            $objs = $client->query($query);
-            return display_cmis_objects($objs);
+
+        if ($keywords) {
+            array_push($query_conditions, "CONTAINS('$keywords')");
         }
-        elseif ($name) {
-            $query = "SELECT * FROM cmis:document WHERE cmis:name LIKE '$name'";
+
+        if ($name) {
+            array_push($query_conditions, "cmis:name LIKE '$name'");
+        }
+
+        // Perform query
+        if(sizeof($query_conditions)) {
+            $query = "SELECT * FROM cmis:document WHERE " . join(" AND ", $query_conditions);
             $objs = $client->query($query);
             return display_cmis_objects($objs);
         }
