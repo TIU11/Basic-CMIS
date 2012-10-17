@@ -54,7 +54,7 @@ function do_cmis($folder, $tree, $keywords, $name) {
         }
         elseif ($tree) {
             $f = $client->getObjectByPath($tree);
-            array_push($query_conditions, "IN_TREE('$f->id')");
+            array_push($query_conditions, "IN_TREE(d,'$f->id')");
         }
 
         if ($keywords) {
@@ -62,12 +62,13 @@ function do_cmis($folder, $tree, $keywords, $name) {
         }
 
         if ($name) {
-            array_push($query_conditions, "cmis:name LIKE '$name'");
+            array_push($query_conditions, "d.cmis:name LIKE '$name'");
         }
 
         // Perform query
         if(sizeof($query_conditions)) {
-            $query = "SELECT * FROM cmis:document WHERE " . join(" AND ", $query_conditions);
+        	$query = "SELECT d.*, o.* FROM cmis:document AS d JOIN cm:titled AS o ON d.cmis:objectId = o.cmis:objectId WHERE " . join(" AND ", $query_conditions) . "ORDER BY d.cmis:name";
+            //$query = "SELECT * FROM cmis:document WHERE " . join(" AND ", $query_conditions);
             $objs = $client->query($query);
             return display_cmis_objects($objs);
         }
@@ -88,11 +89,15 @@ function display_cmis_objects($objs) {
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Title</th>
                 <th>Updated</th>
             </tr>
         </thead>
         <tbody>
         <?php
+        
+        //var_dump($objs);
+            
         foreach ($objs->objectList as $obj) {
             display_cmis_object($obj);
         }
@@ -108,6 +113,7 @@ function display_cmis_objects($objs) {
 
 function display_cmis_object($obj) {
     $name = $obj->properties['cmis:name'];
+    $title = $obj->properties['cm:title'];
     ?>
     <tr>
         <td>
@@ -115,6 +121,9 @@ function display_cmis_object($obj) {
                 <?php echo get_object_icon($obj); ?>
                 <?php echo $name ?>
             </a>
+        </td>
+        <td>
+	       <?php echo $title; ?>
         </td>
         <td>
             <?php
