@@ -10,7 +10,7 @@
 
 **Plugin URI**:         https://github.com/TIU11/Basic-CMIS
 
-**Version**:            0.0.2
+**Version**:            0.0.3-alpha
 
 **Author**:             Anson Hoyt
 

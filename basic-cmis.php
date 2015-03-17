@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Basic CMIS for Wordpress
-Plugin URI: https://github.com/ansonhoyt/Basic-CMIS
+Plugin URI: https://github.com/TIU11/Basic-CMIS
 Description: Wordpress Plugin for basic CMIS integration. Searches a CMIS compliant system and renders the matching documents. Tested with Alfresco Enterprise's CMIS service.
-Version: 0.0.1 (pre-alpha)
+Version: 0.0.3-alpha
 Author: Anson Hoyt
 Author URI: https://github.com/ansonhoyt
 */
@@ -23,12 +23,12 @@ Usage:
     [cmis keywords="coffee tea"]                # Docs containing the keywords
     [cmis name="Agenda%.doc"]                   # Docs whose name matches. May include wildcard character '%'.
 */
-function cmis_shortcode( $attr, $content = null ) { 
+function cmis_shortcode( $attr, $content = null ) {
     extract( shortcode_atts( array(
-      'folder' => '', 
-      'tree' => '', 
-      'keywords' => '', 
-      'name' => '', 
+      'folder' => '',
+      'tree' => '',
+      'keywords' => '',
+      'name' => '',
       ), $attr ) );
 
     return do_cmis($folder, $tree, $keywords, $name);
@@ -95,9 +95,9 @@ function display_cmis_objects($objs) {
         </thead>
         <tbody>
         <?php
-        
+
         //var_dump($objs);
-            
+
         foreach ($objs->objectList as $obj) {
             display_cmis_object($obj);
         }
