@@ -24,6 +24,24 @@ Wordpress Plugin for basic CMIS integration. Searches a CMIS compliant system an
 
 ## Installation
 
+### With Composer
+
+Update composer.json
+
+    "repositories": [
+      {
+      "type": "git",
+      "url": "https://github.com/TIU11/Basic-CMIS"
+      }
+    ],
+    "require": {
+      "tiu11/basic-cmis": "*"
+    }
+
+Run `composer update`
+
+### Manually
+
 1. Pull down the code from Github.
 2. Create a `basic-cmis` folder under your Wordpress plugins folder.
 3. Upload the code to the new folder.

@@ -9,7 +9,7 @@
       "name": "Anson Hoyt",
       "homepage": "http://www.tiu11.org"
     }
-  ]
+  ],
   "type": "wordpress-plugin",
   "require": {
     "composer/installers": "v1.0.21"
