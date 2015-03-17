@@ -8,7 +8,7 @@
 
 **Tested up to**:       3.3.2
 
-**Plugin URI**:         https://github.com/ansonhoyt/Basic-CMIS
+**Plugin URI**:         https://github.com/TIU11/Basic-CMIS
 
 **Version**:            0.0.2
 
@@ -56,7 +56,7 @@ If you have found a bug or have a feature to request, please add it to the [GitH
 
 ## License
 
-Copyright 2012 Tuscarora Intermediate Unit
+Copyright 2015 Tuscarora Intermediate Unit
 
 This file is part of Basic CMIS for WordPress.
 

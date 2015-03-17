@@ -1,0 +1,17 @@
+{
+  "name": "tiu11/basic-cmis",
+  "description": "Wordpress Plugin for basic CMIS integration. Searches a CMIS compliant system and renders the matching documents.",
+  "keywords": ["wordpress", "plugin", "cmis", "alfresco"],
+  "homepage": "https://github.com/TIU11/Basic-CMIS",
+  "license": "LGPLv3",
+  "authors": [
+    {
+      "name": "Anson Hoyt",
+      "homepage": "http://www.tiu11.org"
+    }
+  ]
+  "type": "wordpress-plugin",
+  "require": {
+    "composer/installers": "v1.0.21"
+  }
+}
