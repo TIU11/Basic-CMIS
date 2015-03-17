@@ -35,7 +35,7 @@ Update composer.json
       }
     ],
     "require": {
-      "tiu11/basic-cmis": "*"
+      "tiu11/basic-cmis": "dev-master"
     }
 
 Run `composer update`
