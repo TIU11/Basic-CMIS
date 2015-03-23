@@ -1,22 +1,14 @@
 # Basic CMIS for Wordpress
 
-**Contributors**:       [ansonhoyt](https://twitter.com/ansonhoyt @ansonhoyt)
-
-**Tags**:               cmis, alfresco
-
-**Requires at least**:  3.3.1 (let us know if it works on an earlier version)
-
-**Tested up to**:       3.3.2
-
-**Plugin URI**:         https://github.com/TIU11/Basic-CMIS
-
-**Version**:            0.0.3-alpha
-
-**Author**:             Anson Hoyt
-
-**Author URI**:         https://github.com/ansonhoyt
-
-**License**:            LGPLv3
+**Contributors**:       [ansonhoyt](https://twitter.com/ansonhoyt @ansonhoyt)  
+**Tags**:               cmis, alfresco  
+**Requires at least**:  3.3.1 (let us know if it works on an earlier version)  
+**Tested up to**:       3.3.2  
+**Plugin URI**:         https://github.com/TIU11/Basic-CMIS  
+**Version**:            0.0.3-alpha  
+**Author**:             Anson Hoyt  
+**Author URI**:         https://github.com/ansonhoyt  
+**License**:            LGPLv3  
 
 ## Description
 
